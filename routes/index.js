@@ -8,10 +8,7 @@ var PUser = require ('../models/User');
 
 router.get('/', function(req, res, next) {
   console.log('Home route hit!');
-  PUser.find(function (err, users) {
-    if (err) return next(err);
-    res.json(users);
-  });
+  res.send('Hello, world.');
 });
 
 module.exports = router;
