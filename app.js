@@ -60,6 +60,8 @@ mongoose.connect(uristring, function (err, res) {
   }
 });
 
+app.use(express.static(__dirname + '/public'));
+
 var home = require ('./routes/index');
 router.use('/', home);
 
