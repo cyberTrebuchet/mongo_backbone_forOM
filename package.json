@@ -3,20 +3,33 @@
   "version": "0.3.0",
   "description": "MongoDB with Mongoose on Node.js via Backbone.js",
   "main": "app.js",
-  "engines" : { 
-      "node" : ">=4.1.1",
-      "npm" : ">=2.1.x"
+  "engines": {
+    "node": ">=4.1.1",
+    "npm": ">=2.1.x"
   },
   "repository": "https://github.com/cyberTrebuchet/mongo_backbone_forOM",
-  "authors": [ "Thompson B. Crozier" ],
+  "authors": [
+    "Thompson B. Crozier"
+  ],
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
     "mongoose": ">=4.1.11"
   },
-  "changelog" : [{"0.0.0": "Initial release"},
-		             {"0.1.0": "Update to Mongoose 3.5.7; new MongoClient semantics"},
-                 {"0.2.0": "Update to Mongoose 3.8.15; updated Node engine to 0.10.31; updated npm engine to >=1.4"},
-                 {"0.3.0": "Update to Mongoose >=4.1.11; updated Node engine to >=4.1.1; updated npm engine to >=2.1.x"}],
-  "homepage" : "https://forom.herokuapp.com"
+  "changelog": [
+    {
+      "0.0.0": "Initial release"
+    },
+    {
+      "0.1.0": "Update to Mongoose 3.5.7; new MongoClient semantics"
+    },
+    {
+      "0.2.0": "Update to Mongoose 3.8.15; updated Node engine to 0.10.31; updated npm engine to >=1.4"
+    },
+    {
+      "0.3.0": "Update to Mongoose >=4.1.11; updated Node engine to >=4.1.1; updated npm engine to >=2.1.x"
+    }
+  ],
+  "homepage": "https://forom.herokuapp.com"
 }
-
