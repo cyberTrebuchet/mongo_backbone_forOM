@@ -4,13 +4,13 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require ('mongoose');
-var User = require ('../models/User');
+var Blink = require ('../models/Blink');
 
 router.get('/', function(req, res, next) {
-  console.log('Users route hit!');
-  User.find(function (err, users) {
+  console.log('Blinks route hit!');
+  Blink.find(function (err, blinks) {
     if (err) return next(err);
-    res.json(users);
+    res.json(blinks);
   });
 });
 

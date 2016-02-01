@@ -62,11 +62,14 @@ mongoose.connect(uristring, function (err, res) {
 
 app.use(express.static(__dirname + '/public'));
 
-var home = require ('./routes/index');
-router.use('/', home);
+var Home = require ('./routes/index');
+router.use('/', Home);
 
-var PUser = require ('./routes/users');
-router.use('/users', PUser);
+var Users = require ('./routes/users');
+router.use('/users', Users);
+
+var Blinks = require ('./routes/blinks');
+router.use('/blinks', Blinks);
 
 // The http server will listen to an appropriate port, or default to
 // port 5000.
