@@ -125,11 +125,11 @@ function createWebpage (req, res) {
       var query = PUser.find({'name.last': 'Doe'}); // (ok in this example, it's all entries)
       query.where('age').gt(64);
       query.exec(function(err, result) {
-	if (!err) {
-	  res.end(html4 + JSON.stringify(result, undefined, 2) + html5 + result.length + html6);
-	} else {
-	  res.end('Error in second query. ' + err)
-	}
+      	if (!err) {
+      	  res.end(html4 + JSON.stringify(result, undefined, 2) + html5 + result.length + html6);
+      	} else {
+      	  res.end('Error in second query. ' + err)
+      	}
       });
     } else {
       res.end('Error in first query. ' + err)
