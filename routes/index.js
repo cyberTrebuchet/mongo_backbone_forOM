@@ -1,14 +1,11 @@
 'use strict';
 
 var express = require('express');
-var router = express.Router();
-
-var mongoose = require ('mongoose');
-var PUser = require ('../models/User');
+var router  = express.Router();
 
 router.get('/', function(req, res, next) {
   console.log('Home route hit!');
-  res.send('Hello, world.');
+  res.send('index.html');
 });
 
 module.exports = router;
