@@ -1,8 +1,8 @@
 {
-  "name": "hello-mongoose",
-  "description": "MongoDB with Mongoose on Node.js example",
+  "name": "forOM",
+  "description": "MongoDB with Mongoose on Node.js via Backbone.js",
   "image": "heroku/nodejs",
-  "repository": "https://github.com/mongolab/hello-mongoose.git",
-  "keywords": ["node", "mongoose", "ODM"],
+  "repository": "https://github.com/cyberTrebuchet/mongo_backbone_forOM",
+  "keywords": ["node", "mongoose", "ODM", "backbone"],
   "addons": ["mongolab"]
 }
