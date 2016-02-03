@@ -21,7 +21,18 @@ $(function(){
   var BlinksList = Backbone.View.extend({
     el: '.blinks',
     render: function(){
-      this.$el.html('All Blinks will show here...');
+      var that = this;
+      var blinks = new Blinks();
+      blinks.fetch({
+        success: function(blinks){
+          console.log('Yay we fetched Blinks! And here they are:');
+          console.log(blinks);
+          var template = _.template($('#blink-list-template').html(), {
+            blinks: blinks.models
+          })
+          that.$el.html(template);
+        }
+      })
     }
   });
 

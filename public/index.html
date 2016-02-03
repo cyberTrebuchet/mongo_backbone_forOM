@@ -7,19 +7,29 @@
 
 <body>
 
-  <div class='container'>
-    Hello, whirled!
-    <section class='blinks'>
-      
-    </section>
-  </div>
+<div class='container'>
+  <h1>Hello, whirled!</h1>
+  <section class='blinks'>
 
-<!-- Backbone and dependencies -->
+  </section>
+</div>
+
+<!-- Underscore templates for use by Backbone views in script.js -->
+<script type='text/template' id='blink-list-template'>
+  <h2>Blinks will go here!</h2>
+  <% if (blinks) { %>
+    <% _.each(blinks, function(blinks){ %>
+      <p>blink</p>
+    <% }); %>
+  <% } %>
+</script>
+
+<!-- Backbone and Other Dependencies -->
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
 <script src='//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js'></script>
 
-<!-- Our Script -->
+<!-- Our Very Own Script -->
 <script src='script.js'></script>
 
 </body>
