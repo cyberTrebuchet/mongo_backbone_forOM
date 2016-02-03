@@ -16,12 +16,13 @@
 
 <!-- Underscore templates for use by Backbone views in script.js -->
 <script type='text/template' id='blink-list-template'>
-  <h2>Blinks will go here!</h2>
-  <% if (blinks) { %>
-    <% _.each(blinks, function(blinks){ %>
-      <p>blink</p>
-    <% }); %>
-  <% } %>
+  <form id='new-blink-form'>
+    <input type='text' name='content' />
+    <button type='submit'>blink!</button>
+  </form>
+
+  <h2>Blinks will go here...</h2>
+
 </script>
 
 <!-- Backbone and Other Dependencies -->
