@@ -75,7 +75,7 @@ $(function(){
 
       this.collection.each(function(model) {
         var blink = new BlinkView({ model: model });
-        $list.append(blink.render().$el);
+        $list.prepend(blink.render().$el);
       }, this);
 
       return this;
