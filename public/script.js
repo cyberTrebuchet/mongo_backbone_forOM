@@ -26,7 +26,6 @@ $(function(){
     defaults: {
       content: null,
       author: null,
-      date: null,
       nods: 0,
       parent: null
     }
