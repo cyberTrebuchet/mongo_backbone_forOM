@@ -87,7 +87,11 @@ $(function(){
     saveBlink: function(e){
       var newBlink = $(e.currentTarget).serializeObject();
       console.log(newBlink);
-      this.collection.create(newBlink);
+      this.collection.create(newBlink, {
+        success: function(res){
+          $('#new-blink').val(''); // clear input field upon creation
+        }
+      });
       return false; // to keep page from refreshing after event
     }
   });
