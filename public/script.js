@@ -65,7 +65,7 @@ $(function(){
     el: '.blinks',
 
     initialize: function() {
-      this.listenTo(this.collection, 'sync change', this.render);
+      this.listenTo(this.collection, 'sync', this.render);
       this.collection.fetch();
       this.render();
     },
@@ -73,6 +73,8 @@ $(function(){
       var $list = this.$('ul.blinks-list').empty();
 
       this.collection.each(function(model) {
+        var HTMLescaped = model.escape('content');
+        model.set({ content: HTMLescaped })
         var blink = new BlinkView({ model: model });
         $list.prepend(blink.render().$el);
       }, this);
