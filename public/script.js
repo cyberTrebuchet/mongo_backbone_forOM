@@ -38,7 +38,7 @@ $(function(){
 
   var BlinkView = Backbone.View.extend({
     tagName: 'li',
-    className: 'blink pure-menu-item',
+    className: 'blink pure-menu-item pure-menu',
     template: _.template($('#blink-template').html()),
 
     initialize: function() {
@@ -73,10 +73,12 @@ $(function(){
       var $list = this.$('ul.blinks-list').empty();
 
       this.collection.each(function(model) {
-        var HTMLescaped = model.escape('content');
-        model.set({ content: HTMLescaped })
-        var blink = new BlinkView({ model: model });
-        $list.prepend(blink.render().$el);
+        if (!model.attributes.parent) {
+          var HTMLescaped = model.escape('content');
+          model.set({ content: HTMLescaped })
+          var blink = new BlinkView({ model: model });
+          $list.prepend(blink.render().$el);
+        }
       }, this);
 
       return this;

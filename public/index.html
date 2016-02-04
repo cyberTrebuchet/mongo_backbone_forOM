@@ -29,6 +29,7 @@
 
       <form id='new-blink-form'>
         <input type='text' name='content' id='new-blink' />
+        <input type='hidden' name='author' value='anonymous' />
         <button type='submit'>blink!</button>
       </form>
 
@@ -46,8 +47,19 @@
     <button id='nod'><%= nods %></button>
     <%= content %> by <%= author %>
   </a>
+
+  <span class="pure-menu-heading">
+
+    <form id='new-blink-form'>
+      <input type='text' name='content' id='new-blink' />
+      <input type='hidden' name='author' value='anonymous' />
+      <input type='hidden' name='parent' value='<%= _id %>' />
+      <button type='submit'>blink!</button>
+    </form>
+
+  </span>
   
-  <ul class='winks-list' id='<%= _id %>'></ul>
+  <ul class='blinks-list pure-menu-list' id='<%= _id %>'></ul>
 
 </script>
 
