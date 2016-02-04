@@ -38,7 +38,7 @@ $(function(){
 
   var BlinkView = Backbone.View.extend({
     tagName: 'li',
-    className: 'blink',
+    className: 'blink pure-menu-item',
     template: _.template($('#blink-template').html()),
 
     initialize: function() {

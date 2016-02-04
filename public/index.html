@@ -10,26 +10,31 @@
   <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
   <!--<![endif]-->
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
 
 <header class='pure-g'>
   <div class='pure-u-1'>
-    <h4>this is forOM</h4>
+    <h4 id='logo'>this is forOM</h4>
   </div>
 </header>
 
 <section class='container'>
   <h1>welcome</h1>
-  <section class='blinks'>
+  <section class='blinks pure-menu custom-restricted-width'>
 
-    <form id='new-blink-form'>
-      <input type='text' name='content' id='new-blink' />
-      <button type='submit'>blink!</button>
-    </form>
+    <span class="pure-menu-heading">
 
-    <ul class='blinks-list'></ul>
+      <form id='new-blink-form'>
+        <input type='text' name='content' id='new-blink' />
+        <button type='submit'>blink!</button>
+      </form>
+
+    </span>
+
+    <ul class='blinks-list pure-menu-list'></ul>
 
   </section>
 </section>
@@ -37,8 +42,11 @@
 <!-- Underscore templates for use by Backbone views in script.js -->
 <script type='text/template' id='blink-template'>
 
-  <button id='nod'><%= nods %></button>
-  <span> | <%= content %> | by <%= author %> </span>
+  <a href="#" class="pure-menu-link">
+    <button id='nod'><%= nods %></button>
+    <%= content %> by <%= author %>
+  </a>
+  
   <ul class='winks-list' id='<%= _id %>'></ul>
 
 </script>
