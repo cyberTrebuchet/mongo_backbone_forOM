@@ -34,10 +34,7 @@ $(function(){
 
   var Blinks = Backbone.Collection.extend({
     url: '/blinks',
-    model: Blink,
-    parse: function(data){
-      return data.blinks;
-    }
+    model: Blink
   });
 
   var BlinkView = Backbone.View.extend({
@@ -47,6 +44,7 @@ $(function(){
 
     initialize: function() {
       this.listenTo(this.model, 'destroy', this.remove)
+      this.listenTo(this.model, 'sync change', this.render)
     },
 
     render: function() {
@@ -90,13 +88,12 @@ $(function(){
     saveBlink: function(e){
       var newBlink = $(e.currentTarget).serializeObject();
       console.log(newBlink);
-      blinks.create(newBlink);
+      this.collection.create(newBlink);
       return false; // to keep page from refreshing after event
     }
   });
 
   var blinks = new Blinks();
-  blinks.fetch();
 
   var blinksList = new BlinksList({ collection: blinks });
 
@@ -110,7 +107,6 @@ $(function(){
 
   router.on('route:home', function(){
     console.log('Backbone home route hit! Rendering Blinks...');
-    blinksList.render();
   });
 
   Backbone.history.start();

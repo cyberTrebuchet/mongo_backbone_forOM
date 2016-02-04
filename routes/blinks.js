@@ -23,4 +23,11 @@ router.post('/', jsonParser, function(req, res, next) {
   });
 });
 
+router.get('/:id', function(req, res, next){
+  Blink.findById(req.params.id, function (err, blink){
+    if (err) return next(err);
+    res.json(blink);
+  });
+});
+
 module.exports = router;

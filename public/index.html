@@ -21,7 +21,9 @@
 <!-- Underscore templates for use by Backbone views in script.js -->
 <script type='text/template' id='blink-template'>
 
-  <button id='nod'><%= nods %></button> | <%= content %> | by <%= author %>
+  <button id='nod'><%= nods %></button>
+  <span> | <%= content %> | by <%= author %> </span>
+  <ul class='winks-list' id='<%= _id %>'></ul>
 
 </script>
 
