@@ -1,9 +1,25 @@
 body {
   font-family: Garamond;
   text-align: center;
+  background-color: aliceblue;
+  padding-top: 4em;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0em;
 }
 
 #logo {
   text-align: left;
   padding-left: 1.5em;
+}
+
+.blink {
+  position: relative;
+  margin: auto;
+  margin-top: 0.5em;
+  border-radius: 1em;
+  box-shadow: 2px, 2px, 1px, brown;
 }

@@ -37,8 +37,8 @@ $(function(){
   });
 
   var BlinkView = Backbone.View.extend({
-    tagName: 'li',
-    className: 'blink pure-menu-item pure-menu',
+    tagName: 'article',
+    className: 'blink',
     template: _.template($('#blink-template').html()),
 
     initialize: function() {
@@ -70,12 +70,10 @@ $(function(){
       this.render();
     },
     render: function() {
-      var $list = this.$('ul.blinks-list').empty();
+      var $list = this.$('section.blinks-list').empty();
 
       this.collection.each(function(model) {
         if (!model.attributes.parent) {
-          var HTMLescaped = model.escape('content');
-          model.set({ content: HTMLescaped })
           var blink = new BlinkView({ model: model });
           $list.prepend(blink.render().$el);
         }
@@ -85,15 +83,18 @@ $(function(){
     },
 
     events: {
-      'submit #new-blink-form': 'saveBlink'
+      'submit .new-blink-form': 'saveBlink'
     },
 
     saveBlink: function(e){
-      var newBlink = $(e.currentTarget).serializeObject();
-      console.log(newBlink);
+      var newBlink = new Blink($(e.currentTarget).serializeObject());
+
+      var HTMLescaped = newBlink.escape('content');
+      newBlink.set({ content: HTMLescaped });
+
       this.collection.create(newBlink, {
         success: function(res){
-          $('#new-blink').val(''); // clear input field upon creation
+          $('.new-blink').val(''); // clear input field upon creation
         }
       });
       return false; // to keep page from refreshing after event

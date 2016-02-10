@@ -23,43 +23,33 @@
 
 <section class='container'>
   <h1>welcome</h1>
-  <section class='blinks pure-menu custom-restricted-width'>
 
-    <span class="pure-menu-heading">
+  <section class='blinks'>
+    <form class='new-blink-form'>
+      <input type='text' name='content' class='new-blink' />
+      <button type='submit'>blink!</button>
+    </form>
 
-      <form id='new-blink-form'>
-        <input type='text' name='content' id='new-blink' />
-        <input type='hidden' name='author' value='anonymous' />
-        <button type='submit'>blink!</button>
-      </form>
-
-    </span>
-
-    <ul class='blinks-list pure-menu-list'></ul>
-
+    <section class='blinks-list'></section>
   </section>
+
 </section>
 
 <!-- Underscore templates for use by Backbone views in script.js -->
 <script type='text/template' id='blink-template'>
 
-  <a href="#" class="pure-menu-link">
-    <button id='nod'><%= nods %></button>
-    <%= content %> by <%= author %>
-  </a>
+  <p><button id='nod'><%= nods %></button> <%= content %></p>
+  <p>by anonymous</p>
 
-  <span class="pure-menu-heading">
-
-    <form id='new-blink-form'>
-      <input type='text' name='content' id='new-blink' />
-      <input type='hidden' name='author' value='anonymous' />
+  <section class='winks'>
+    <form class='new-blink-form'>
+      <input type='text' name='content' class='new-blink' />
       <input type='hidden' name='parent' value='<%= _id %>' />
-      <button type='submit'>blink!</button>
+      <button type='submit'>wink!</button>
     </form>
-
-  </span>
-  
-  <ul class='blinks-list pure-menu-list' id='<%= _id %>'></ul>
+    
+    <section class='winks-list' id='<%= _id %>'></section>
+  </section>
 
 </script>
 
